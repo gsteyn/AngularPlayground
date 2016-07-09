@@ -1,0 +1,12 @@
+<div>
+    <p>Messages length: {{ messageList.length }}</p>
+    
+    <div ng-repeat="message in messageList">
+        <div ng-if="message.displayCond">
+            <span>Type: {{ message.type }}</span>
+            <span>Message: {{ message.message }}</span>
+            <span>Length: {{ message.length || 3 }}</span>
+        </div>
+    </div>
+    
+</div>
