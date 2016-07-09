@@ -21,7 +21,7 @@ angular.module('myApp.view1', ['ngRoute'])
             message: 'message 1',
             type: 'info',
             length: 6,
-            displayCond: testString
+            displayCond: testString != null || testString != ''
         },
         {
             message: 'message 2',
@@ -29,14 +29,6 @@ angular.module('myApp.view1', ['ngRoute'])
             displayCond: testModel && testModel.bla
         }
     ];
-    
-    var displayMsg1 = function() {
-        return testModel;
-    };
-    
-    var displayMsg2 = function() {
-        return testModel && testModel.bla;
-    };
     
     $scope.toggle = function(message) {
         $ctrl.messages[message].displayCond = !$ctrl.messages[message].displayCond;
